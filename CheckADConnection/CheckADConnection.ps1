@@ -9,7 +9,7 @@ else {
     Write-Host 'RSAT Tools is already installed, skipping installation' -ForegroundColor Yellow
 }
 
-$AdminSESA = Get-Credential -Message 'Please enter an ADM account'
+$AdminSESA = Get-Credential -Message 'Please enter an AD Admin account'
 foreach ($server in $servers) {
     $obj = New-Object PSObject
     $obj | Add-Member -MemberType NoteProperty -Name "ServerName" -Value $server
