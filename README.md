@@ -6,6 +6,7 @@ Different tools to gather data when working in a windows / linux environement
 ### Developed with : 
 * [Python](https://www.python.org/)
 * [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)
+* [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
 ### Usage :
 
@@ -36,7 +37,8 @@ Different tools to gather data when working in a windows / linux environement
 
  SSLScanTxtToCsv :
  
- This script is specific to the SSLScan module used during pentests, it transforms the output of the command `sslscan --starttls-ftp <IP>:21 > results.txt` to a csv
+ This script is specific to the SSLScan module used during pentests, it transforms the output of the command 
+ `sslscan --starttls-ftp <IP>:21 > results.txt` to a csv
  
   - Fill the ip_FTP file with one server per line, preferably IPs
   - Run the bash script
