@@ -9,7 +9,7 @@ else {
     Write-Host 'RSAT Tools is already installed, skipping installation' -ForegroundColor Yellow
 }
 
-$AdminSESA = Get-Credential -Message 'Please enter an AD Admin account'
+$Admin = Get-Credential -Message 'Please enter an AD Admin account'
 foreach ($server in $servers) {
     $obj = New-Object PSObject
     $obj | Add-Member -MemberType NoteProperty -Name "ServerName" -Value $server
@@ -18,7 +18,7 @@ foreach ($server in $servers) {
         
     }
     try {
-        $res = Get-ADComputer -Identity $server -Credential $AdminSESA -ErrorAction Stop
+        $res = Get-ADComputer -Identity $server -Credential $Admin -ErrorAction Stop
         Write-Host $res -ForegroundColor Green
         $obj | Add-Member -MemberType NoteProperty -Name "ADStatus" -Value "Found in AD"
         $obj | Add-Member -MemberType NoteProperty -Name "FullInfo" -Value $res
